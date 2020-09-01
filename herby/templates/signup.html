@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+        h1 {
+            width: 450px;
+            border: 3px solid #5C8263;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-top: 50px;
+            padding:3px;
+            background-color: white;
+        }
+        #f1 {
+            width: 450px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border: 3px solid #A2CCAA;
+            border-style: dashed;
+            border-radius: 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div align="center" class="color">
+        <h1>회원가입</h1>
+        <form id="f1" method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
+
+            Username
+            <input name="username" type="text" value="">
+            <br><br>
+            Password
+            <input name="password1" type="password" value="">
+            <br><br>
+            Confirm password
+            <input name="password2" type="password" value="">
+            <br><br><br>
+            <input type="submit" value="회원가입" style="background-color: #CECFCE; border: 0; outline: 0">
+        </form>
+    </div>
+</body>
+{% endblock %}

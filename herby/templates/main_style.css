@@ -1,0 +1,21 @@
+/*메인페이지 CSS : 이나영*/
+
+.headercontainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    text-decoration: none;
+}
+
+.headA, .headB {
+    Text-decoration: none;
+
+}
+
+.postlist {
+    height: 80%;
+    align-items: center;
+    color: black;
+}

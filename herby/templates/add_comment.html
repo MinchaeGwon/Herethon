@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<html>
+    <head>
+        <style>
+        body {
+            background-color: #f1f1f1;
+        }
+        h1 {
+            width: 450px;
+            border: 3px solid #5C8263;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-top: 50px;
+            padding:8px;
+            background-color: white;
+            font-family: TmoneyRoundWindExtraBold;
+        }
+        #f1 {
+            width: 450px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border: 3px solid #A2CCAA;
+            border-style: dashed;
+            border-radius: 10px;
+            background-color: white;
+            font-size :larger;
+            font-family: 'BBTreeGR';
+        }
+        </style>
+    </head>
+    <body>
+        <div align="center">
+            <h1>새 댓글</h1>
+
+            <form method = "POST" class = "post-form" id="f1">
+                {%csrf_token %}
+                {{form.as_p}}
+                <button type = "submit" class = "save btn btn - dark">Send</button>
+            </form>
+            
+        </div>
+    </body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    <style>
+        @font-face { font-family: 'BBTreeGR'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGR.woff') format('woff'); font-weight: normal; font-style: normal; }
+        body {
+            background-color: #f1f1f1;
+        }
+        h1 {
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+        h2 {
+            width: 450px;
+            border: 3px solid #5C8263;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-top: 50px;
+            padding:8px;
+            background-color: white;
+            font-family: TmoneyRoundWindExtraBold;
+        }
+        
+        #f1 {
+            width: 450px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border: 3px solid #A2CCAA;
+            border-style: dashed;
+            border-radius: 10px;
+            background-color: white;
+            font-size :larger;
+            font-family: 'BBTreeGR';
+        }
+    </style>
+
+    <script type="text/javascript">
+        function getValue() {
+
+            var q1 = document.getElementsByName("q1");
+            var q1_value;
+            for (var i = 0; i < q1.length; i++) {
+                if (q1[i].checked) {
+                    q1_value = q1[i].value;
+                }
+            }
+
+            var q2 = document.getElementsByName("q2");
+            var q2_value;
+            for (var i = 0; i < q2.length; i++) {
+                if (q2[i].checked) {
+                    q2_value = q2[i].value;
+                }
+            }
+
+            var q3 = document.getElementsByName("q3");
+            var q3_value;
+            for (var i = 0; i < q3.length; i++) {
+                if (q3[i].checked) {
+                    q3_value = q3[i].value;
+                }
+            }
+
+            if (q1_value == "실내") {
+                if (q2_value == "혼자") {
+                    if (q3_value == "결과물 있음") {
+                        var newH3 = document.createElement("h3");
+                        var txt = document.createTextNode("당신에게 어울리는 취미는 '프랑스 자수'입니다.");
+                        newH3.appendChild(txt);
+                        var d = document.getElementById("d1");
+                        d.appendChild(newH3);
+                    } else {
+                        var newH3 = document.createElement("h3");
+                        var txt = document.createTextNode("당신에게 어울리는 취미는 '실내 클라이밍'입니다.");
+                        newH3.appendChild(txt);
+                        var d = document.getElementById("d1");
+                        d.appendChild(newH3);
+                    }
+                } else {
+                    if (q3_value == "결과물 있음") {
+                        var newH3 = document.createElement("h3");
+                        var txt = document.createTextNode("당신에게 어울리는 취미는 '코딩'입니다.");
+                        newH3.appendChild(txt);
+                        var d = document.getElementById("d1");
+                        d.appendChild(newH3);
+                    } else {
+                        var newH3 = document.createElement("h3");
+                        var txt = document.createTextNode("당신에게 어울리는 취미는 '요가'입니다.");
+                        newH3.appendChild(txt);
+                        var d = document.getElementById("d1");
+                        d.appendChild(newH3);
+                    }
+                }
+            } else {
+                if (q2_value == "혼자") {
+                    if (q3_value == "결과물 있음") {
+                        var newH3 = document.createElement("h3");
+                        var txt = document.createTextNode("당신에게 어울리는 취미는 '사진 찍기'입니다.");
+                        newH3.appendChild(txt);
+                        var d = document.getElementById("d1");
+                        d.appendChild(newH3);
+                    } else {
+                        var newH3 = document.createElement("h3");
+                        var txt = document.createTextNode("당신에게 어울리는 취미는 '등산'입니다.");
+                        newH3.appendChild(txt);
+                        var d = document.getElementById("d1");
+                        d.appendChild(newH3);
+                    }
+                } else {
+                    if (q3_value == "결과물 있음") {
+                        var newH3 = document.createElement("h3");
+                        var txt = document.createTextNode("당신에게 어울리는 취미는 '벽화 그리기'입니다.");
+                        newH3.appendChild(txt);
+                        var d = document.getElementById("d1");
+                        d.appendChild(newH3);
+                    } else {
+                        var newH3 = document.createElement("h3");
+                        var txt = document.createTextNode("당신에게 어울리는 취미는 '마라톤'입니다.");
+                        newH3.appendChild(txt);
+                        var d = document.getElementById("d1");
+                        d.appendChild(newH3);
+                    }
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="d1" align="center">
+        <br><br>
+        <h2>취미 찾기</h2>
+
+        <form id="f1">
+            <input type="radio" name="q1" value="실내" /> 실내파  
+            <input type="radio" name="q1" value="실외" /> 실외파
+            <br><br>
+
+            <input type="radio" name="q2" value="혼자" /> 혼자서  
+            <input type="radio" name="q2" value="다같이" /> 다같이
+            <br><br>
+        
+            <input type="radio" name="q3" value="결과물 있음" /> 결과물 있음  
+            <input type="radio" name="q3" value="결과물 없음" /> 결과물 없음
+            <br><br>
+
+            <input type="button" value="확인" onClick="javascript:getValue()" style="background-color: #CECFCE; border: 0; outline: 0" />
+        </form>
+
+        <a href="{% url 'main'%}" style="font-family: 'BBTreeGR';">더 많은 취미 보기</a>
+    </div>
+</body>
+{% endblock %}
